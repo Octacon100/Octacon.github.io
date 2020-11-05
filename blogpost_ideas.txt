@@ -1,0 +1,5 @@
+1. Intro to flyway and why it makes database releases easy.
+2. Common error messages you might get with Flyway and how to fix them/get around them.
+3. How to set up unit testing and CI/CD for your databases.
+4. Why a database is like a state machine with infinite states.
+5. When to use Temp Tables vs Common Table Expressions.
