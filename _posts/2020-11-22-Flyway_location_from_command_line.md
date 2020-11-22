@@ -13,7 +13,9 @@ In this case, you'll want to change the "([locations]((https://flywaydb.org/docu
 
 Here's an example:
 
-`flyway -locations=filesystem:/../../releases,filesystem:/../../unit_tests,filesystem:/../../repeatable migrate` #TODO: Check on this when you get home.
+	flyway -locations=filesystem:/../../releases,filesystem:/../../unit_tests,filesystem:/../../repeatable migrate
+    
+    #TODO: Check on this when you get home.
 
 A couple of things here, this is currently set up to look outside of the Flyway installation directory to get the code to apply to the database, in this case, all of the sql scripts within the releases directory, the unit_tests directory, and the repeatable directory. This would include all files within directories under those directories as well, as long as they are not hidden.
 
