@@ -13,7 +13,7 @@ In this case, you'll want to change the "[locations](https://flywaydb.org/docume
 
 Here's an example:
 
-	flyway -locations=filesystem:/../../releases,filesystem:/../../unit_tests,filesystem:/../../repeatable migrate
+	flyway -locations=filesystem:..\..\releases,filesystem:..\..\unit_tests,filesystem:..\..\repeatable migrate
     
     #TODO: Check on this when you get home.
 
@@ -21,18 +21,23 @@ A couple of things here, this is currently set up to look outside of the Flyway 
 
 From here, it's easy enough to change your call depending on parameters you set up in a script. I'll use a powershell script as an example:
 
-    $flywayLocations = "-locations=filesystem:/../../releases"
+    $flywayLocations = "-locations=filesystem:..\..\releases"
+    
     #Add extra locations depending on parameters.
     if $unitTest -eq "true"
     {
-        $flywayLocations = $flywayLocations + ",filesystem:/../../unit_tests"
+        $flywayLocations = $flywayLocations + ",filesystem:..\..\unit_tests"
     }
     if $repeatable -eq "true"
     {
-        $flywayLocations = $flywayLocations + ",filesystem:/../../repeatable"
+        $flywayLocations = $flywayLocations + ",filesystem:..\..\repeatable"
     }
+
+    #Set up your arguments for the powershell call.
+    $arguments = "$flywayLocations", "migrate"
+
     #Then run flyway
-    flyway $flywayLocations migrate
+    .\flyway.cmd $arguments
 
 You can put that within a powershell script and call the powershell script with different parameters, making deployment to different environments much easier, and giving you more control on the release process in a lightweight way. This is helpful when you want to only run version updates, if your database is not fully in source control yet, or to skip certain code as needed.
 
