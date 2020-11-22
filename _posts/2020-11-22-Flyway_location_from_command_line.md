@@ -9,7 +9,7 @@ If you are looking for an open source data base source control and migration too
 
 Flyway's [Migrate](https://flywaydb.org/documentation/usage/commandline/migrate) command, usually uses whatever is in the [flyway_install]/conf/flyway.conf file for its configuration settings, and you can either create multiple configuration files for different deployments, or enter configuration options on the command line. This is useful in settings where you may want to have certain code be deployed in certain environments, like only installing unit tests on you development environment, or having different synonyms for a local environment versus a remote environment.
 
-In this case, you'll want to change the "[locations]((https://flywaydb.org/documentation/configuration/parameters/locations)" option. It's a comma delimited option that allows you to use both classpath locations and filesystem locations, along with cloud locations like Amazon s3 buckets and Google Cloud Storage. Today, I'll be using filesystem locations.
+In this case, you'll want to change the "[locations](https://flywaydb.org/documentation/configuration/parameters/locations)" option. It's a comma delimited option that allows you to use both classpath locations and filesystem locations, along with cloud locations like Amazon s3 buckets and Google Cloud Storage. Today, I'll be using filesystem locations.
 
 Here's an example:
 
