@@ -4,12 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+I'm an Australian that has been living in Massachesetts for 10+ years, and have worked with databases and reporting for most of that. I've worked with Oracle, Mircosoft Sql Server, Hyperion and plenty of other databases and reporting software. I'm hoping this blog will help others with agile database practices, database CI/CD and various other data tips and tricks I can help out with.
 
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+My hobbies include video games and board games, house projects, weight lifting, home theater setups, and smart homes. 
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[goldengamebarn@gmail.com](mailto:goldengamebarn@gmail.com)
