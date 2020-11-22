@@ -5,11 +5,11 @@ tags: flyway CI CD
 published: true
 ---
 
-If you are looking for an open source data base source control and migration tool, I have found ([Flyway](https://flywaydb.org/)) to be an excellent tool that works with both Oracle and Microsoft SQL Server, and many more. How and why is a topic for later, but for now, here's a quick tip on how to change the flyway migrate call to select different locations from the command line or any scripting language.
+If you are looking for an open source data base source control and migration tool, I have found [Flyway](https://flywaydb.org/) to be an excellent tool that works with both Oracle and Microsoft SQL Server, and many more. How and why is a topic for later, but for now, here's a quick tip on how to change the flyway migrate call to select different locations from the command line or any scripting language.
 
-Flyway's ([Migrate](https://flywaydb.org/documentation/usage/commandline/migrate)) command, usually uses whatever is in the [flyway_install]/conf/flyway.conf file for its configuration settings, and you can either create multiple configuration files for different deployments, or enter configuration options on the command line. This is useful in settings where you may want to have certain code be deployed in certain environments, like only installing unit tests on you development environment, or having different synonyms for a local environment versus a remote environment.
+Flyway's [Migrate](https://flywaydb.org/documentation/usage/commandline/migrate) command, usually uses whatever is in the [flyway_install]/conf/flyway.conf file for its configuration settings, and you can either create multiple configuration files for different deployments, or enter configuration options on the command line. This is useful in settings where you may want to have certain code be deployed in certain environments, like only installing unit tests on you development environment, or having different synonyms for a local environment versus a remote environment.
 
-In this case, you'll want to change the "([locations]((https://flywaydb.org/documentation/configuration/parameters/locations))" option. It's a comma delimited option that allows you to use both classpath locations and filesystem locations, along with cloud locations like Amazon s3 buckets and Google Cloud Storage. Today, I'll be using filesystem locations.
+In this case, you'll want to change the "[locations]((https://flywaydb.org/documentation/configuration/parameters/locations)" option. It's a comma delimited option that allows you to use both classpath locations and filesystem locations, along with cloud locations like Amazon s3 buckets and Google Cloud Storage. Today, I'll be using filesystem locations.
 
 Here's an example:
 
