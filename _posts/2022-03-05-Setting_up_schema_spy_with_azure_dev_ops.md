@@ -3,7 +3,7 @@ layout: post
 title: How to set up SchemaSpy with a Azure SQL Database on Azure Dev Ops
 ---
 
-When's the last time you had a database with up to up documentation?
+When's the last time you had a database with up to date documentation?
 
 Have you ever worked with a database with up to date documentation?
 
