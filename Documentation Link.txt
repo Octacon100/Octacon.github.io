@@ -1,0 +1,10 @@
+System
+https://jekyllrb.com/docs/
+
+Markdown -- actually writing blogs:
+https://shopify.github.io/liquid/
+
+Markdown -- the actual markdown itself:
+https://daringfireball.net/projects/markdown/
+
+Actual documentation: https://daringfireball.net/projects/markdown/basics
