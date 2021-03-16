@@ -14,7 +14,7 @@ distinctDF = uniquePrivClassSeries.to_frame()
 distinctDF.columns = ["KeyName"]
 ```
 
-After that is done, you can use the pandas merge method with this dataframe, like this (I perfer to have the two columns with separate names to make it easier to find key errors.):
+After that is done, you can use the pandas merge method with this dataframe, like this (I prefer to have the two columns with separate names to make it easier to find key errors.):
 
 ```
 finalRowsToInsert = pd.merge(distinctDF, checkListDF, how='inner', left_on='KeyName', right_on=u'KeyName2')

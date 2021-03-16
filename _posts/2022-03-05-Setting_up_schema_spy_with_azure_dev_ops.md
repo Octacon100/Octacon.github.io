@@ -29,10 +29,10 @@ steps:
 ```
 
 There are 5 variables in there, which you'll need to set up in Azure DevOps
--DATABASENAME = The name of the database.
--SERVERNAME = The name of the server. If you're using an azure database it will end in '.database.windows.net'.
--PORT_NUMBER = The Sql Server port, usually 1433.
--USER = The username to log in.
+-DATABASENAME = The name of the database. <br/>
+-SERVERNAME = The name of the server. If you're using an azure database it will end in '.database.windows.net'. <br/>
+-PORT_NUMBER = The Sql Server port, usually 1433. <br/>
+-USER = The username to log in. <br/>
 -PASSWORD = The password used to log in.
 
 ## Setup
@@ -64,12 +64,12 @@ Important note, this step is mounting volumes for Docker using the '-v' flag. Th
 Other important note, you're going to want to find the driver you want to use for MS SQL yourself and put it in a "DB_Driver" directory to be picked up. I had to use the jre8 version of the 9.2 JDBC connection driver in order to get my connection to work. [Here's a link to find the driver] (https://docs.microsoft.com/en-us/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-ver15). If it's out of date, just google "Download microsoft 9.2 jdbc driver for sql server". Put the version that mentions "jre8" in your "DB_Driver" folder.
 
 Now you have your volume mounts set up, notice how "docker run" is running the "schemaspy/schemaspy:latest" image from the Docker website. That means you are running the latest version of the SchemaSpy Docker image, every time this runs. From there, now you just need to decipher the options. There's a few:
-    -t = Which driver you are using. In this case we are using mssql08, or any version of Microsoft SQL Server JDBC since Sql Server 2008.
-    -db = The name of the database you want to run this on. It's using an Azure DevOps variable.
-    -host = The server you want to run this on. Also using an Azure DevOps variable.
-    -port = The port to connect to the server on. Same as above.
-    -u = The username to connect with. Same as above.
-    -p = The password to connect with. I can only say the same thing so many times.
+    -t = Which driver you are using. In this case we are using mssql08, or any version of Microsoft SQL Server JDBC since Sql Server 2008.<br/>
+    -db = The name of the database you want to run this on. It's using an Azure DevOps variable.<br/>
+    -host = The server you want to run this on. Also using an Azure DevOps variable.<br/>
+    -port = The port to connect to the server on. Same as above.<br/>
+    -u = The username to connect with. Same as above.<br/>
+    -p = The password to connect with. I can only say the same thing so many times. See above.
 
 ## Output generation
 
