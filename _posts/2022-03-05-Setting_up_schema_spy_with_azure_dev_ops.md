@@ -88,5 +88,5 @@ Here we are selecting the directory we want to pull from, which is the "Output" 
 
 You will then see the documentation in your artifacts when the build has completed, and you can download it when you would like. If I get time, I might put a post up describing how to post the documentation to a website. I'm guessing it will involve an FTP of some sort, which I'm hoping you can do in YAML on Azure DevOps easily enough.
 
-Thanks for reading!
+Thanks for reading! <br/>
 Nathan
