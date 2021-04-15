@@ -21,9 +21,7 @@ That download gives you code to run on your Azure database. While you can't set 
 
 Once that is done, set up all the tests you like. 
 
-## Example Test
-
-Note -- Put a test here.
+## Creating a simple test
 
 Before you create your test, you must create a class to put the test into. You can do that using something like this:
 
@@ -56,7 +54,7 @@ END
 
 This is a very basic test that shows how to run an assertion to use as your test. In a future blog post I hope to go into more details on the kinds of tests you can do with tSQLt. Now you are set up to run your test with powershell and report on it.
 
-## Powershell Script
+## Powershell script
 
 Once you have a few tests ready, then you'll need some Powershell to run all the tests you have produced. The powershell script you'll be running connects to a database, runs some SQL(One line to run all the tests, another to format the results in the JUnit xml format.), then save the xml produced to an xml file for Azure DevOps to pick up and report on.
 
@@ -85,7 +83,7 @@ Once you have a few tests ready, then you'll need some Powershell to run all the
 
 As you can see, this is running tSQLt.RunAll to run all the tests, then it runs tSQLt.XmlResultFormatter to format the data as a JUnit xml result set. Then it exports the data in a file called 'TEST-TSqlT.xml' to be picked up as Azure DevOps in a later step.
 
-## YAML Script
+## YAML script
 
 Now you have your tests and your powershell script in order, it's time to put everything together in a YAML script for Azure DevOps pipelines to use. There's two steps. Step one runs the powershell mentioned above, and step two publishes the test results.
 
@@ -103,10 +101,12 @@ Now you have your tests and your powershell script in order, it's time to put ev
       testResultsFiles: '**/TEST-*.xml'
       testRunTitle: 'Publish_TSqlT_TestResults'
 ```
-With step one, I'm passing in the powershell arguments using pipeline variables. That's why you're seeing $(SERVERNAME) and $(DATABASENAME) as they are variables within that pipeline. I'm running this powershell script on the host as well, not running it on any container. That's why you see the target is host.
+With step one/task one, I'm passing in the powershell arguments using pipeline variables. That's why you're seeing $(SERVERNAME) and $(DATABASENAME) as they are variables within that pipeline. I'm running this powershell script on the host as well, not running it on any container. That's why you see the target is host.
 
-Once that's all done, once you run your pipeline, you'll see the test results on your build report. You can click on 'tests' and see something that looks like the following: 
+Task two is the part that finds the test results your powershell script publishes, and make them available to Azure DevOps. It's looking for any xml file that starts with the word 'TEST-'. If you check the powershell script above, it creates a file named 'TEST-TSqlT.xml' which will be picked up by this task.
+
+Once that's all done, once you run your pipeline, you'll see the test results on your build report. You can click on 'Tests' and see something that looks like the following: 
 
 ![Test Results](/../blog_images/test_results.png "Test Results")
 
-And you're done. Now as you add tests and do your builds, you can be more confident that the code your deploying does everything you want it to do. Hope to hear about the sorts of tests you set up!
+And you're done. Now as you add tests and run your builds, you can be more confident that the code your deploying does everything you want it to do. Hope to hear about the sorts of tests you set up!
