@@ -11,7 +11,9 @@ I tend to believe that documentation on databases is very important as all sorts
 
 Usually writing documentation is done by writing out a huge Word document that no one reads and no one updates, making the initial documentation a waste of time to generate. What if you could have a computer write out the documentation for you? What if every time you did a build new documentation would be generated for you? Wouldn't that save everyone a lot of time?
 
-Well there's a way to do it! You can pull down a SchemaSpy Docker image and use it on your development database to generate documentation every time you build. I'll show you how.
+![Would you like documentation like this?](/assets/SchemaSpyDoc_1.png)
+
+Well there's a way to do it! Using [SchemaSpy](http://schemaspy.org/), you can pull down a [SchemaSpy Docker image](https://hub.docker.com/r/schemaspy/schemaspy/) and use it on your development database to generate documentation every time you build. I'll show you how.
 
 ## Example
 
@@ -82,7 +84,9 @@ Once all that is done, you'll end up with documentation created in the "Output" 
 
 Here we are selecting the directory we want to pull from, which is the "Output" directory we created and had SchemaSpy output into. Then we give the artifact a name, in this case "DatabaseDocumentation".
 
+![Here's how a diagram looks.](/assets/SchemaSpyDoc_2.png)
+
 You will then see the documentation in your artifacts when the build has completed, and you can download it when you would like. If I get time, I might put a post up describing how to post the documentation to a website. I'm guessing it will involve an FTP of some sort, which I'm hoping you can do in YAML on Azure DevOps easily enough.
 
-Thanks for reading!
+Thanks for reading! <br/>
 Nathan
