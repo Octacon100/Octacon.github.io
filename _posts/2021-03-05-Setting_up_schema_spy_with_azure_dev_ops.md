@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to set up SchemaSpy with a Azure SQL Database on Azure Dev Ops
+title: How to set up SchemaSpy with a Azure SQL Database on Azure DevOps
 ---
 
 When's the last time you had a database with up to date documentation?
@@ -80,7 +80,7 @@ Once all that is done, you'll end up with documentation created in the "Output" 
     artifact: 'DatabaseDocumentation'
 ```
 
-Here we are selecting the directory we want to pull from, which is the "Output" directory we created and had SchemaSpy output into. Then we give the artifact a name, in this case "DatabaseDocumentation.
+Here we are selecting the directory we want to pull from, which is the "Output" directory we created and had SchemaSpy output into. Then we give the artifact a name, in this case "DatabaseDocumentation".
 
 You will then see the documentation in your artifacts when the build has completed, and you can download it when you would like. If I get time, I might put a post up describing how to post the documentation to a website. I'm guessing it will involve an FTP of some sort, which I'm hoping you can do in YAML on Azure DevOps easily enough.
 
